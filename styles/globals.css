@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.text-body {
+  @apply text-[13px] sm:text-[15px] md:text-[16px];
+}
+
+.text-th {
+  @apply text-[12px] sm:text-[13px] md:text-[14px];
+}
