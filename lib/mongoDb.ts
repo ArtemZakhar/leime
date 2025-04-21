@@ -7,10 +7,14 @@ export const connectToDatabase = async () => {
     return;
   }
 
-  console.log(process.env.MONGODB_URI);
+  const uri = process.env.NEXT_PUBLIC_MONGODB_URI;
+
+  if (!uri) {
+    throw new Error('MONGODB_URI is not defined');
+  }
 
   try {
-    await mongoose.connect(process.env.MONGODB_URI as string);
+    await mongoose.connect(uri);
   } catch (e) {
     console.log(e);
     console.log('failed to connect to DB');
